@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 Filter</title>
+</head>
+<body>
+    <main>
+        Minimo: <input type="range" min="0" max="11" v-model="minimo">
+        <ul>
+            <li v-for="juego in mejoresJuegos">{{ juego.titulo | alReves }}</li>
+        </ul>
+        
+        <hr>
+
+        Buscar: <input type="search" v-model="busqueda" placeholder="BuscarJuego">
+        <ul>
+            <li v-for="juego in buscarJuego">{{ juego.titulo }}</li>
+        </ul>
+        <pre>{{ $data }}</pre>
+    </main>
+    <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
