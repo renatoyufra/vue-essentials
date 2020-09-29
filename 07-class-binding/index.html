@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 Binding Class</title>
+    <style>
+        li {
+            cursor: pointer;
+        }
+
+        .completado {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p>
+            Tareas completadas {{ tareasCompletadas.length }}
+        </p>
+        <ul>
+            <li v-for="tarea in tareas" @click="completarTarea(tarea)" :class="{completado: tarea.completado}">{{ tarea.titulo }}</li>
+        </ul>
+        <pre>
+            {{ $data }}
+        </pre>
+    </main>
+    <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
